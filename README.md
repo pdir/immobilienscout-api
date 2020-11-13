@@ -17,7 +17,7 @@ You need an *Consumer Key* and *Consumer Secret* - [Get your client credentials]
 
 Use [IS24 RestAPI playground](https://playground.immobilienscout24.de/rest/playground) for testing and getting the Access Token and Access Secret.
 
-[Generate Access Token and Access Secret](https://pdir.de/docs/de/customer/immobileinscout24-api/) (German)
+Manual [generate Access Token and Access Secret](https://pdir.de/docs/de/customer/immobileinscout24-api/) (German)
 
 ### Basic
 ```php
