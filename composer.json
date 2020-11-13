@@ -1,0 +1,37 @@
+{
+  "name": "pdir/immobilienscout-api",
+  "version": "0.1.0",
+  "type": "library",
+  "description": "Simple API Integration for Immobilienscout24",
+  "keywords": [
+    "immobilienscout",
+    "rest",
+    "api"
+  ],
+  "license": "MIT",
+  "require": {
+    "php": "^7.2",
+    "ext-json": "*",
+    "ext-curl": "*",
+    "guzzlehttp/guzzle": "^6.3",
+    "guzzlehttp/oauth-subscriber": "0.4.*",
+    "psr/cache": "^1.0"
+  },
+  "require-dev": {
+    "fzaninotto/faker": "^1.9.1",
+    "phpunit/phpunit": "^8.5",
+    "symfony/cache": "^5.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "Pdir\\Immoscout\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Tests\\": "tests/"
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}
