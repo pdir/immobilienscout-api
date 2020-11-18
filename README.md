@@ -26,9 +26,8 @@ $credentials = [
     'consumerKey' => 'IS24_CONSUMER_KEY',
     'consumerSecret' => 'IS24_CONSUMER_SECRET',
     'tokenKey' => 'IS24_TOKEN_KEY',
-    'tokenKey' => 'IS24_TOKEN_SECRET',    
+    'tokenSecret' => 'IS24_TOKEN_SECRET',    
 ];
-
 
 $api = new \Pdir\Immoscout\Api();
 or
@@ -37,6 +36,12 @@ $api = new \Pdir\Immoscout\Api($credentials);
 // get all real estates with details
 $estates = $api->getAllRealEstates(true);
 
+// get real estate by id
+$estate = $api->getRealEstate('1234567890');
+
 // get attachments by id
 $attachments = $api->getAttachments('1234567890');
+
+// get contact by id
+$contact = $api->getContact('1234567890');
 ```

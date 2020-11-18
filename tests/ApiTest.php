@@ -15,8 +15,16 @@
  * file that was distributed with this source code.
  */
 
-namespace Pdir\Immoscout\Exceptions;
+namespace Tests;
 
-class ImmoscoutRatelimitExceededException extends \Exception
+use Pdir\Immoscout\Api;
+use PHPUnit\Framework\TestCase;
+
+class ApiTest extends TestCase
 {
+    public function testCanBeInstantiated()
+    {
+        $api = new Api();
+        $this->assertInstanceOf(Api::class, $api);
+    }
 }

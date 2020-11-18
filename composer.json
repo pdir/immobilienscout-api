@@ -1,6 +1,5 @@
 {
   "name": "pdir/immobilienscout-api",
-  "version": "0.1.0",
   "type": "library",
   "description": "Simple API Integration for Immobilienscout24",
   "keywords": [
@@ -31,7 +30,5 @@
     "psr-4": {
       "Tests\\": "tests/"
     }
-  },
-  "minimum-stability": "dev",
-  "prefer-stable": true
+  }
 }

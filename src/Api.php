@@ -1,5 +1,20 @@
 <?php
 
+/*
+ * Immobilienscout24 PHP API
+ *
+ * Copyright (c) 2020 pdir / digital agentur // pdir GmbH
+ *
+ * @package    immobilienscout-api
+ * @link       https://github.com/pdir/immobilienscout-api
+ * @license    MIT
+ * @author     Mathias Arzberger <develop@pdir.de>
+ * @author     pdir GmbH <https://pdir.de>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Pdir\Immoscout;
 
 use GuzzleHttp\Client;
@@ -25,7 +40,7 @@ class Api
      *
      * @var string $apiVersion
      */
-    protected string $apiVersion = 'v1.0';
+    protected $apiVersion = 'v1.0';
 
     /**
      * the immoscout consumer key
@@ -166,6 +181,19 @@ class Api
         $items = parse_url($url);
         $parts = explode('/', $items['path']);
         return $parts[2];
+    }
+
+    public function getContact(int $id)
+    {
+        $resource = sprintf('user/me/contact/%s', $id);
+
+        $data = $this->requestGet($resource);
+
+        if (null === $data) {
+            return null;
+        }
+
+        return $data;
     }
 
     private function requestGet($resource)
