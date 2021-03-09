@@ -94,7 +94,7 @@ class Api
         {
             for($i=1; $i <= $response['Paging']['numberOfPages']; $i++)
             {
-                $estates = array_merge($this->getRealEstates($i), $estates);
+                $estates = array_merge($this->getRealEstates($i, 100, false, $archived), $estates);
             }
         }
 
@@ -108,12 +108,12 @@ class Api
 
         // add detail data to array
         if($withDetails)
-        {
+        {            
             foreach($estates as $key => $estate)
             {
                 $data = $this->getRealEstate($estate['@id']);
                 $type = lcfirst(str_replace('offerlistelement:Offer', '', $estate['@xsi.type']));
-
+                
                 // set real estate type
                 $data['type'] = $type;
 
@@ -131,8 +131,7 @@ class Api
         $resource = sprintf('user/me/realestate?pagenumber=%s&pagesize=%s&archivedobjectsincluded=%s',
             $pageNumber,
             $pageSize,
-            $archived ? 'true' : 'false',
-            $publishChannel
+            $archived ? 'true' : 'false'
         );
 
         if($publishChannel)
@@ -141,7 +140,7 @@ class Api
         }
 
         $data = $this->requestGet($resource);
-
+        
         if($pagination)
         {
             return $data['realestates.realEstates'];
