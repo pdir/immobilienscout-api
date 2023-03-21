@@ -10,6 +10,10 @@ Types of changes
     Security in case of vulnerabilities.
 )
 
+## [1.2.0](https://github.com/pdir/immobilienscout-api/tree/1.2.0) – 2023-03-01
+
+- [Added] filter for realEstateState ACTIVE only 
+
 ## [1.1.0](https://github.com/pdir/immobilienscout-api/tree/1.1.0) – 2023-03-01
 
 - [Added] Add php8 support

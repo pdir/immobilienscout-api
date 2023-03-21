@@ -83,7 +83,7 @@ class Api
         $this->prepareClient();
     }
 
-    public function getAllRealEstates(bool $withDetails = false, bool $archived = false) {
+    public function getAllRealEstates(bool $withDetails = false, bool $archived = false, bool $activeOnly = false) {
         $estates = [];
 
         $response = $this->getRealEstates(1, 100, true, $archived);
@@ -104,6 +104,17 @@ class Api
 
         if (null === $estates) {
             return null;
+        }
+
+        // import only active estates and remove inactive ones
+        if($activeOnly)
+        {
+            foreach($estates as $key => $estate)
+            {
+                if(isset($estate['realEstateState']) && 'INACTIVE' === $estate['realEstateState']) {
+                    unset($estates[$key]);
+                }
+            }
         }
 
         // add detail data to array
@@ -131,7 +142,7 @@ class Api
         $resource = sprintf('user/me/realestate?pagenumber=%s&pagesize=%s&archivedobjectsincluded=%s',
             $pageNumber,
             $pageSize,
-            $archived ? 'true' : 'false'
+            $archived ? 'true' : 'false',
         );
 
         if($publishChannel)

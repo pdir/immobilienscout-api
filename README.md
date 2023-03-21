@@ -36,6 +36,9 @@ $api = new \Pdir\Immoscout\Api($credentials);
 // get all real estates with details
 $estates = $api->getAllRealEstates(true);
 
+// get only active real estates with details
+$estates = $api->getAllRealEstates(true, false, true);
+
 // get real estate by id
 $estate = $api->getRealEstate('1234567890');
 
