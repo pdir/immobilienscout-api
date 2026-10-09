@@ -12,9 +12,8 @@
     "php": "^7.2 || ^8.0",
     "ext-json": "*",
     "ext-curl": "*",
-    "guzzlehttp/guzzle": "^6.3",
-    "guzzlehttp/oauth-subscriber": "0.4.*",
-    "psr/cache": "^1.0"
+    "guzzlehttp/guzzle": "^6.3 || ^7.0",
+    "guzzlehttp/oauth-subscriber": "0.9.*"
   },
   "require-dev": {
     "fzaninotto/faker": "^1.9.1",

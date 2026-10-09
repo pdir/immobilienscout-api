@@ -10,6 +10,12 @@ Types of changes
     Security in case of vulnerabilities.
 )
 
+## [1.3.0](https://github.com/pdir/immobilienscout-api/tree/1.3.0) – 2026-10-06
+
+- [Changed] Updated Guzzle dependency to support versions 6 and 7
+- [Changed] Added `guzzlehttp/oauth-subscriber` dependency for OAuth 1.0 authentication
+- [Changed] Removed redundant psr/cache dependency
+
 ## [1.2.0](https://github.com/pdir/immobilienscout-api/tree/1.2.0) – 2023-03-21
 
 - [Added] filter for realEstateState ACTIVE only 
